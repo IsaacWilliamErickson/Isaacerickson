@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+@font-face {
+  font-family: "uni 05_53";
+  font-style: normal;
+  font-weight: normal;
+  src: local("uni 05_53"), url("https://dl.dropboxusercontent.com/u/74836805/codepenassets/uni05_53.woff") format("woff");
+}
+
+body {
+  background-color: #000a08;
+  background:
+    radial-gradient(
+      100vw 10vw at 50vw 0, 
+      rgba(#3a2a00, 0.25) 0%,
+      rgba(#3a2a00, 0) 100%
+    ),
+    radial-gradient(
+      75vw 75vw at 10vw 0, 
+      rgba(#3a4a00, 0.25) 0%,
+      rgba(#3a4a00, 0) 100%
+    ),
+    radial-gradient(
+      25vw 75vw at 90vw 0, 
+      rgba(#aa4a00, 0.25) 0%,
+      rgba(#aa4a00, 0) 100%
+    ),
+    radial-gradient(
+      circle at 0 0, 
+      rgba(#02aa30, 0.25) 0%,
+      rgba(#032a30, 0.25) 50%,
+      rgba(#0a2a30, 0.25) 70%,
+      rgba(#022a30, 0) 100%
+    ),
+    radial-gradient(
+      circle at 100vw 100vh, 
+      rgba(#020a30, 0.25) 0%,
+      rgba(#032a30, 0.25) 50%,
+      rgba(#0a0a30, 0.25) 70%,
+      rgba(#022a30, 0) 100%
+    ),
+    radial-gradient(
+      top right, 
+      rgba(#020a03, 0.25) 0%,
+      rgba(#030a00, 0.25) 50%,
+      rgba(#0a0a00, 0.25) 70%,
+      rgba(#020a00, 0) 100%
+    ),
+    linear-gradient(
+      to right, 
+      #000a08 0%,
+      #000000 50%,
+      #000808 70%,
+      #080808 100%
+    );
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
+#geome-boot {
+  max-width: 640px;
+  margin: 0 auto 0 auto;
+  color: #2aff40;
+  font-family: "uni 05_53", "Inconsolata";
+  font-size: 16px;
+}
+
+#geome-boot .char {
+  text-shadow: 0 0 12px rgba(#2aff40, 0.4);
+  animation: geome-boot-char-fade 0.1s ease-in-out 0s;
+}
+
+#geome-boot .char:nth-child(3n+0) {
+  animation: geome-boot-char-fade 0.05s ease-in-out 0.1s;
+}
+#geome-boot .char:nth-child(4n+1) {
+  text-shadow: 0 0 16px rgba(#2aff40, 0.7);
+  animation: geome-boot-char-fade 0.1s ease-in-out 0.05s;
+}
+#geome-boot .char:nth-child(5n+2) {
+  text-shadow: 0 0 32px rgba(#2aff40, 0.9);
+  animation: geome-boot-char-fade 0.2s ease-in-out 0.1s;
+}
+#geome-boot .char:nth-child(7n+4) {
+  color: rgba(#2aff40, 0.8);
+  text-shadow: 0 0 4px rgba(#2aff40, 0.5);
+  animation: geome-boot-char-fade 0.2s ease-in-out 0s;
+}
+#geome-boot .char:nth-child(11n+8) {
+  color: rgba(#2aff40, 0.8);
+  text-shadow: 0 0 4px rgba(#2aff40, 0.5);
+  animation: geome-boot-char-fade 0.05s ease-in-out 0.2s;
+}
+@for $i from 0 to 4 {
+  #geome-boot .char:nth-child(25n+#{3+$i}) {
+    animation: geome-boot-char-1 12s ease-in-out #{-$i*-0.1}s infinite;
+  }
+}
+
+@keyframes geome-boot-char-fade {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes geome-boot-char-1 {
+  @for $t from 0 through 100 {
+    #{$t}% {
+      color: rgba(#2aff40, random(40) / 100 + 0.6);
+      text-shadow: 0 0 #{random(4)+8}px rgba(#2aff40, random(40) / 100 + 0.5);
+    }
+  }
+}
+
+#geome-boot .char-95 {
+  margin: 0 -1px;
+}
+#geome-boot .char-124 {
+  margin: 0 -1px;
+}
